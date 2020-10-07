@@ -126,10 +126,10 @@ class Picture:
                 frame_web=Frame(root1,width=400,height=400,relief="ridge",bd=4)
                 frame_web.place(x=0,y=0)
 
-                mess_1=Label(frame_web,text="step 1:talk2trend/bollywood and talk2trend/english",anchor="w",font=('times new roman',11,'bold'))
+                mess_1=Label(frame_web,text="step 1:https://stocksnap.io",anchor="w",font=('times new roman',11,'bold'))
                 mess_1.place(x=10,y=25)
 
-                mess_2=Label(frame_web,text="step 2: Click the scrape button to scrape the website",anchor="w",font=('times new roman',11,'bold'))
+                mess_2=Label(frame_web,text="step 2: Enjoy the sites",anchor="w",font=('times new roman',11,'bold'))
                 mess_2.place(x=10,y=45)
 
                 root1.mainloop()
@@ -148,35 +148,47 @@ class Picture:
             lab_heading=Label(frame_um,text="User Manual",font=('times new roman',13,'bold'))
             lab_heading.place(x=130,y=0)
 
-            mess_1=Label(frame_um,text="step 1: Choose a website from the given combination box",anchor="w",font=('times new roman',11,'bold'))
+            mess_1=Label(frame_um,text="step 1: Choose any categeory from box ",anchor="w",font=('times new roman',11,'bold'))
             mess_1.place(x=10,y=25)
 
-            mess_2=Label(frame_um,text="step 2: Click the scrape button to scrape the website",anchor="w",font=('times new roman',11,'bold'))
+            mess_2=Label(frame_um,text="step 2: Select the limit of pictures you want",anchor="w",font=('times new roman',11,'bold'))
             mess_2.place(x=10,y=45)
 
-            mess_3=Label(frame_um,text="step 3: Select the url of the given song",anchor="w",font=('times new roman',11,'bold'))
+            mess_3=Label(frame_um,text="step 3: Click the Scrape button",anchor="w",font=('times new roman',11,'bold'))
             mess_3.place(x=10,y=65)
 
-            mess_4=Label(frame_um,text="step 4: Go to download songs tab ",anchor="w",font=('times new roman',11,'bold'))
+            mess_4=Label(frame_um,text="step 4: Go to download Pictures tab ",anchor="w",font=('times new roman',11,'bold'))
             mess_4.place(x=10,y=85)
 
-            mess_5=Label(frame_um,text="step 5: Place the song url in box  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_5=Label(frame_um,text="step 5: Write the folder name to save images  ",anchor="w",font=('times new roman',11,'bold'))
             mess_5.place(x=10,y=105)
 
-            mess_6=Label(frame_um,text="step 6: Give the name to save the song name  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_6=Label(frame_um,text="step 6: Click on download button   ",anchor="w",font=('times new roman',11,'bold'))
             mess_6.place(x=10,y=125)
 
-            mess_7=Label(frame_um,text="step 7: Click on download button  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_7=Label(frame_um,text="step 7: It will save your photo in given folder  ",anchor="w",font=('times new roman',11,'bold'))
             mess_7.place(x=10,y=145)
 
-            mess_8=Label(frame_um,text="step 8: Wait till the songs download  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_8=Label(frame_um,text="step 8: To download a single photo copy single url  ",anchor="w",font=('times new roman',11,'bold'))
             mess_8.place(x=10,y=165)
 
-            mess_9=Label(frame_um,text="step 9: Songs will be store automatically in folder  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_9=Label(frame_um,text="step 9: paste the url in download Pictures tab  ",anchor="w",font=('times new roman',11,'bold'))
             mess_9.place(x=10,y=185)
 
-            mess_10=Label(frame_um,text="step 10:Play the song and enjoy  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_10=Label(frame_um,text="step 10: Give the name you want  ",anchor="w",font=('times new roman',11,'bold'))
             mess_10.place(x=10,y=205)
+
+            mess_11=Label(frame_um,text="step 11: Click on download_single button  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_11.place(x=10,y=225)
+
+            mess_12=Label(frame_um,text="step 12: To Search any images write into image field  ",anchor="w",font=('times new roman',11,'bold'))
+            mess_12.place(x=10,y=245)
+
+            mess_13=Label(frame_um,text="step 13: Select the limit of images   ",anchor="w",font=('times new roman',11,'bold'))
+            mess_13.place(x=10,y=265)
+
+            mess_14=Label(frame_um,text="step 14: Click on Search button   ",anchor="w",font=('times new roman',11,'bold'))
+            mess_14.place(x=10,y=285)
 
             root2.mainloop()
 
@@ -1731,18 +1743,18 @@ class Picture:
 
         tabControl = Notebook(firstframe,width=683,height=214) 
   
-        scrape_songs = Frame(tabControl,background="grey57") 
-        download_songs = Frame(tabControl,background="grey87") 
+        scrape_pictures = Frame(tabControl,background="grey57") 
+        download_pictures = Frame(tabControl,background="grey87") 
         about = Frame(tabControl,background="grey77") 
         
-        tabControl.add(scrape_songs, text ='Scrape songs') 
-        tabControl.add(download_songs, text ='Download songs')
+        tabControl.add(scrape_pictures, text ='Scrape songs') 
+        tabControl.add(download_pictures, text ='Download songs')
         tabControl.add(about, text ='About') 
         tabControl.place(x=0,y=0)
 
 #==============================firstframe================================================#
 
-        lab_pic=Label(scrape_songs,text="Select Pictures ",font=('times new roman',12,'bold'),background="grey57",fg="white")
+        lab_pic=Label(scrape_pictures,text="Select Pictures ",font=('times new roman',12,'bold'),background="grey57",fg="white")
         lab_pic.place(x=20,y=10)
         
 
@@ -1755,40 +1767,40 @@ class Picture:
                        "Hand","Tree","Cat","Kitchen","Wall","Space","Wood","Writing","Kid","Landscape","Books","Green","Architecture",\
                         "Sun","Desk","Mobile","Beer","Restaurant","Creative","Cake","Running","White","Garden","Children","Camera",\
                         "Student","Gym","Social media","Doctor","Easter"]
-        list_pictures_combo=Combobox(scrape_songs,values=list_pictures,font=('arial',10),width=19,state="readonly",textvariable=pictures)
+        list_pictures_combo=Combobox(scrape_pictures,values=list_pictures,font=('arial',10),width=19,state="readonly",textvariable=pictures)
         list_pictures_combo.set("select pictures")
         list_pictures_combo.place(x=150,y=10)
 
 
-        lab_pic=Label(scrape_songs,text="Select Limits ",font=('times new roman',12,'bold'),background="grey57",fg="white")
+        lab_pic=Label(scrape_pictures,text="Select Limits ",font=('times new roman',12,'bold'),background="grey57",fg="white")
         lab_pic.place(x=350,y=10)
         
 
         list_limit=list(range(1,101))
-        list_limit_combo=Combobox(scrape_songs,values=list_limit,font=('arial',10),width=19,state="readonly",textvariable=limits)
+        list_limit_combo=Combobox(scrape_pictures,values=list_limit,font=('arial',10),width=19,state="readonly",textvariable=limits)
         list_limit_combo.set("1")
         list_limit_combo.place(x=480,y=10)
 
-        lab_pictures_url=Label(scrape_songs,text="Search Pictures",font=('times new roman',12,'bold'),background="grey57",fg="white")
+        lab_pictures_url=Label(scrape_pictures,text="Search Pictures",font=('times new roman',12,'bold'),background="grey57",fg="white")
         lab_pictures_url.place(x=300,y=80)
 
-        Ent_search=Entry(scrape_songs,width=75,font=('times new roman',12,'bold'),textvariable=search_url,bd=4,relief='ridge')
+        Ent_search=Entry(scrape_pictures,width=75,font=('times new roman',12,'bold'),textvariable=search_url,bd=4,relief='ridge')
         Ent_search.place(x=35,y=120)
 
 
-        but_search=Button(scrape_songs,text="Search",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=Search)
+        but_search=Button(scrape_pictures,text="Search",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=Search)
         but_search.place(x=50,y=170)
         but_search.bind("<Enter>",on_enter0)
         but_search.bind("<Leave>",on_leave0)
 
         
-        but_scrape_pictures=Button(scrape_songs,text="Scrape Pictures",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=scrape_pictures)
+        but_scrape_pictures=Button(scrape_pictures,text="Scrape Pictures",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=scrape_pictures)
         but_scrape_pictures.place(x=260,y=170)
         but_scrape_pictures.bind("<Enter>",on_enter1)
         but_scrape_pictures.bind("<Leave>",on_leave1)
 
 
-        but_clear_list=Button(scrape_songs,text="Clear List",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=clear_list)
+        but_clear_list=Button(scrape_pictures,text="Clear List",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=clear_list)
         but_clear_list.place(x=490,y=170)
         but_clear_list.bind("<Enter>",on_enter2)
         but_clear_list.bind("<Leave>",on_leave2)
@@ -1796,30 +1808,30 @@ class Picture:
 
 #===================================================================================#
 
-        lab_pictures_url=Label(download_songs,text="Enter Picture Url",font=('times new roman',12,'bold'),background="grey87")
+        lab_pictures_url=Label(download_pictures,text="Enter Picture Url",font=('times new roman',12,'bold'),background="grey87")
         lab_pictures_url.place(x=40,y=30)
     
-        Ent_pictures_url=Entry(download_songs,textvariable=pictures_url_single,width=50,font=('times new roman',12,'bold'),bd=4,relief='ridge')
+        Ent_pictures_url=Entry(download_pictures,textvariable=pictures_url_single,width=50,font=('times new roman',12,'bold'),bd=4,relief='ridge')
         Ent_pictures_url.place(x=230,y=30)
 
-        lab_save_as_name=Label(download_songs,text="Pictures/folder Saves as Name",font=('times new roman',12,'bold'),background="grey87")
+        lab_save_as_name=Label(download_pictures,text="Pictures/folder Saves as Name",font=('times new roman',12,'bold'),background="grey87")
         lab_save_as_name.place(x=40,y=110)
 
-        Ent_save_as_name=Entry(download_songs,textvariable=pictures_name,width=20,font=('times new roman',12,'bold'),bd=4,relief='ridge')
+        Ent_save_as_name=Entry(download_pictures,textvariable=pictures_name,width=20,font=('times new roman',12,'bold'),bd=4,relief='ridge')
         Ent_save_as_name.place(x=290,y=105)
 
-        but_download_pictures_all=Button(download_songs,text="Download All",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_all)
+        but_download_pictures_all=Button(download_pictures,text="Download All",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_all)
         but_download_pictures_all.place(x=50,y=170)
         but_download_pictures_all.bind("<Enter>",on_enter3)
         but_download_pictures_all.bind("<Leave>",on_leave3)
 
 
-        but_download_pictures=Button(download_songs,text="Download Single",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_single)
+        but_download_pictures=Button(download_pictures,text="Download Single",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_single)
         but_download_pictures.place(x=270,y=170)
         but_download_pictures.bind("<Enter>",on_enter4)
         but_download_pictures.bind("<Leave>",on_leave4)
 
-        but_clear=Button(download_songs,text="Clear",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=clear)
+        but_clear=Button(download_pictures,text="Clear",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=clear)
         but_clear.place(x=490,y=170)
         but_clear.bind("<Enter>",on_enter5)
         but_clear.bind("<Leave>",on_leave5)

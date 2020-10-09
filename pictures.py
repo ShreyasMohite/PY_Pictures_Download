@@ -12,6 +12,7 @@ from tkinter.ttk import Notebook,Progressbar,Combobox
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
+import threading
 import os
 
 
@@ -215,7 +216,7 @@ class Picture:
 
 
 
-        def scrape_pictures():
+        def scrape_picturess():
             try:
                 with open("C:\\TEMP\\pictures.txt","w") as f:
                     if pictures.get()=="Nature":
@@ -1643,8 +1644,9 @@ class Picture:
                 for childrens in gather:
                     child=childrens.findChildren("img",recursive=True)
                     urls=[images["src"] for images in child]
+                    i=len(urls)
                     for url in urls:
-                        try:                        
+                        try:
                             filename = re.search(r'/([\w_-]+[.](jpg|gif|png))$', url)
                             if not filename:
                                 print("Regex didn't match with the url: {}".format(url))
@@ -1652,12 +1654,20 @@ class Picture:
                             with open(path+"/"+filename.group(1), 'wb') as f:
                                 if 'https' not in url:
                                     urls = url
+                                prg.start(10)    
                                 response = requests.get(url)
                                 f.write(response.content)
+                                prg.stop()
                         except Exception as e:
                             print(e)
             except Exception as e:
                 tkinter.messagebox.askretrycancel("Error","Network Error/=/ Enter the folder name")
+
+
+
+        def alls():
+            t2=threading.Thread(target=download_all)
+            t2.start()
 
 
 
@@ -1671,13 +1681,20 @@ class Picture:
                 elif pictures_name.get()=="":
                     tkinter.messagebox.askretrycancel("Error","Please enter picture name")
                 else:
+                    prg.start(10)
                     url=pictures_url_single.get()
                     r = requests.get(url)
                     with open('C:/Users/SHREYAS/Desktop/shreyas python/Picturedownloader/{}.jpg'.format(pictures_name.get()), 'wb') as f:
                         f.write(r.content)
+                        prg.stop()
 
             except:
                 pass
+
+
+        def single():
+            t1=threading.Thread(target=download_single)
+            t1.start()
         
         def clear_list():
             try:
@@ -1794,7 +1811,7 @@ class Picture:
         but_search.bind("<Leave>",on_leave0)
 
         
-        but_scrape_pictures=Button(scrape_pictures,text="Scrape Pictures",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=scrape_pictures)
+        but_scrape_pictures=Button(scrape_pictures,text="Scrape Pictures",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=scrape_picturess)
         but_scrape_pictures.place(x=260,y=170)
         but_scrape_pictures.bind("<Enter>",on_enter1)
         but_scrape_pictures.bind("<Leave>",on_leave1)
@@ -1820,13 +1837,13 @@ class Picture:
         Ent_save_as_name=Entry(download_pictures,textvariable=pictures_name,width=20,font=('times new roman',12,'bold'),bd=4,relief='ridge')
         Ent_save_as_name.place(x=290,y=105)
 
-        but_download_pictures_all=Button(download_pictures,text="Download All",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_all)
+        but_download_pictures_all=Button(download_pictures,text="Download All",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=alls)
         but_download_pictures_all.place(x=50,y=170)
         but_download_pictures_all.bind("<Enter>",on_enter3)
         but_download_pictures_all.bind("<Leave>",on_leave3)
 
 
-        but_download_pictures=Button(download_pictures,text="Download Single",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=download_single)
+        but_download_pictures=Button(download_pictures,text="Download Single",font=('times new roman',12,"bold"),width=15,cursor="hand2",command=single)
         but_download_pictures.place(x=270,y=170)
         but_download_pictures.bind("<Enter>",on_enter4)
         but_download_pictures.bind("<Leave>",on_leave4)
